@@ -31,3 +31,23 @@ export const calculateUserStatistics = (users: User[]) => {
     usersWithSavings: savingsCount,
   };
 };
+
+/**
+ * Formats Date
+ *
+ * @param {string} inputDate - input date
+ * @returns {Date} A formatted date value
+ */
+export function formatDateString(inputDate: string): string {
+    const options: Intl.DateTimeFormatOptions = {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+    };
+
+    const date = new Date(inputDate);
+    return new Intl.DateTimeFormat('en-US', options).format(date);
+};

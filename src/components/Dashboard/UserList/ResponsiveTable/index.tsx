@@ -10,6 +10,7 @@ import useUserStore from "@/store/userStore";
 import type { ResponsiveTableProps } from "@/utils/types/components";
 import type { User } from "@/utils/types/user";
 
+import { formatDateString } from "@/utils/helpers/user";
 import ButtonWithModal from "./ButtonWithModal";
 import PageSizeSelector from "./PageSizeSelector";
 import FilterPanel from "./FilterPanel";
@@ -218,7 +219,7 @@ const ResponsiveTable: React.FC<ResponsiveTableProps> = () => {
         </thead>
         <tbody>
         {!isFetching && filteredUsers.length === 0 && <tr><td>No users available</td></tr>}
-        {(isFetching && filteredUsers.length) === 0 ? <tr><td>Loading...</td></tr> : paginatedUsers.map((user, index) => {
+        {(isFetching && filteredUsers.length) === 0 ? <tr><td id={styles.loading}>Loading...</td></tr> : paginatedUsers.map((user, index) => {
 
             const userPath = `/dashboard/users/${user.personalInfo.username}`;
 
@@ -227,7 +228,7 @@ const ResponsiveTable: React.FC<ResponsiveTableProps> = () => {
               <td data-label="Username">{user.personalInfo.username}</td>
               <td data-label="Email">{user.personalInfo.email}</td>
               <td data-label="PhoneNumber">{user.personalInfo.phoneNumber}</td>
-              <td data-label="DateJoined">{user.dateJoined}</td>
+              <td data-label="DateJoined">{formatDateString(user.dateJoined)}</td>
               <td data-label="Status" className={styles[user.status.toLowerCase()]}><p className={styles.box}>{user.status}</p></td>
               <td data-label="Options">
               <ButtonWithModal
