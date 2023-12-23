@@ -39,27 +39,26 @@ export const calculateUserStatistics = (users: User[]) => {
  * @returns {Date} A formatted date value
  */
 export function formatDateString(inputDate: string): string {
-  // Parse the input date string
-     const parts = inputDate.match(/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2}) (AM|PM)/);
+      const parts = inputDate.match(/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2}) (AM|PM)/);
 
-     if (!parts) {
-         return 'Invalid Date';
-     }
+      if (!parts) {
+        return 'Invalid Date';
+      }
 
-     let [ , year, month, day, hour, minute, , ampm] = parts;
+      let [ , year, month, day, hour, minute, , ampm] = parts;
 
-     // Convert hour to 24-hour format if PM
-     if (ampm === 'PM' && hour !== '12') {
-         hour = parseInt(hour, 10) + 12;
-     }
+      // Convert hour to 24-hour format if PM and not 12 PM
+      if (ampm === 'PM' && hour !== '12') {
+        hour = (parseInt(hour, 10) + 12).toString();
+      }
 
-     // Convert hour to 0 if 12 AM
-     if (ampm === 'AM' && hour === '12') {
-         hour = '00';
-     }
+      // Convert hour to 0 if 12 AM
+      if (ampm === 'AM' && hour === '12') {
+        hour = '00';
+      }
 
-     // Create a new date object
-     const date = new Date(year, month - 1, day, hour, minute);
+      // Create a new date object
+      const date = new Date(year, parseInt(month, 10) - 1, parseInt(day, 10), parseInt(hour, 10), parseInt(minute, 10));
 
      // Format the date
      const options = {
