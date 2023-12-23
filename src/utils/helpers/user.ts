@@ -39,6 +39,12 @@ export const calculateUserStatistics = (users: User[]) => {
  * @returns {Date} A formatted date value
  */
 export function formatDateString(inputDate: string): string {
+  
+    if (!inputDate || isNaN(Date.parse(inputDate))) {
+      console.error('Invalid date:', inputDate);
+      return 'Invalid date';
+    }
+
     const options: Intl.DateTimeFormatOptions = {
         year: 'numeric',
         month: 'short',
