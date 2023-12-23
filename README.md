@@ -77,9 +77,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Contact
 
 For inquiries or support, please email me at oludotunlonge@gmail.com.
-
-## Project Status
-
-The project is currently in [active development/maintenance mode/not being actively developed]. Check the issue tracker for updates on ongoing development.
-# lendsqr-fe-test
-# lendsqr-fe-test
