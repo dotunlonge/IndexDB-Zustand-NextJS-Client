@@ -53,6 +53,8 @@ $header-min-height: 6.25em; // 100px converted to em based on the base font size
     display: flex;
     align-items: center;
     justify-content: center;
+    right: 1em;
+    position: relative;
 
     @media (max-width: $breakpoint-tablet) {
       width: 100%;
