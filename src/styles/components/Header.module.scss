@@ -53,8 +53,6 @@ $header-min-height: 6.25em; // 100px converted to em based on the base font size
     display: flex;
     align-items: center;
     justify-content: center;
-    right: 1em;
-    position: relative;
 
     @media (max-width: $breakpoint-tablet) {
       width: 100%;
@@ -95,8 +93,8 @@ $header-min-height: 6.25em; // 100px converted to em based on the base font size
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     border: 1px solid rgb(33 63 125 / 15%);
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0  !important;
     height: 3em;
     width: 100%;
     background: #FFF;
@@ -109,6 +107,9 @@ $header-min-height: 6.25em; // 100px converted to em based on the base font size
     border-bottom-right-radius: 8px;
     height: 3em;
     padding: 0 1.5em;
+    right: 1em;
+    position: relative;
+
   }
 
 .hamburger {
