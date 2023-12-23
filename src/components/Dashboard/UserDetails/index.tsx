@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from '@/styles/components/UserDetails.module.scss';
 import type { User, UserDetailsProps } from "@/utils/types/user";
+import Head from 'next/head';
 
 import GeneralDetailsSection from "./GeneralDetailsSection";
 import UserProfileAndTabs from "./UserProfileAndTabs";
@@ -23,7 +24,7 @@ const UserDetails: React.FC<UserDetailsProps> = ({ user }) => {
     Savings: 'Savings',
     appAndSystem: 'App and System'
   }
-  
+
   // State to track the active tab
   const [activeTab, setActiveTab] = useState(tabs.generalDetails);
 
@@ -47,6 +48,15 @@ const UserDetails: React.FC<UserDetailsProps> = ({ user }) => {
 
   return (
     <div className={styles.userDetails}>
+
+      <Head>
+       <title>{personalInfo.username} | User Details - Lendsqr</title>
+       <meta name="description" content="View detailed information about users including personal, educational, and employment details." />
+       <meta name="keywords" content="user details, personal info, education, employment, user profile" />
+       {/* Additional SEO tags as needed */}
+     </Head>
+
+
       {/* Profile and Tabs Section */}
       <UserProfileAndTabs
         personalInfo={personalInfo}
