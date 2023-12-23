@@ -98,7 +98,8 @@ $header-min-height: 6.25em; // 100px converted to em based on the base font size
     height: 3em;
     width: 100%;
     background: #FFF;
-    padding: 0 1em;
+    padding: 0 1.25em;
+    outline: none;
   }
 
   .searchBtn{
@@ -107,7 +108,7 @@ $header-min-height: 6.25em; // 100px converted to em based on the base font size
     border-bottom-right-radius: 8px;
     height: 3em;
     padding: 0 1.5em;
-    right: 1em;
+    right: 1.1em;
     position: relative;
 
   }
