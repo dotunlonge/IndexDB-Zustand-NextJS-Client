@@ -1,0 +1,247 @@
+@import '../variables';
+
+.userList {
+  .tableResponsive {
+    overflow-x: auto;
+    margin: 1rem 0;
+    margin-top: 2em;
+    border-radius: 8px;
+    width: 100%;
+    background: $userList-color-primary;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid  rgba(0, 0, 0, 0.04);
+    -webkit-overflow-scrolling: touch; // for smooth scrolling on iOS
+  }
+
+  .tableContainer{
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    text-wrap: nowrap;
+    padding: 2.5em;
+    display: table-cell;
+
+    th, td {
+      color: $userList-color-text;
+      font-family: $userList-font-family;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      padding-left: 1em;
+      }
+
+    td{
+      font-weight: 400;
+      font-size: 1.1em;
+      padding-top: 1.25em;
+      padding-bottom: 1.25em;
+      min-width: 50px;
+    }
+
+    th {
+      background-color: $userList-color-primary;
+      color: $userList-color-secondary;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 14em;
+      text-transform: uppercase;
+      padding-bottom: 2em;
+
+      &:last-child {
+        min-width: auto;
+      }
+
+      span{
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 0.5em;
+      }
+
+      img {
+        margin-left: 0.5rem;
+        display: inline-block;
+      }
+
+    }
+
+    tbody {
+      tr {
+        cursor: pointer;
+        & + tr{
+          border-top: 1px solid $userList-color-border;
+        }
+        &:hover{
+          background-color: $userList-color-border;
+        }
+      }
+    }
+
+    .box{
+      border-radius: 100px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      width: fit-content;
+      padding: 0.75em 1.25em;
+      font-size: 1.1em;
+      letter-spacing: 0.5px;
+    }
+
+    .active {
+      .box{
+        color: $userList-color-active;
+        background: #f0f8f3;
+      }
+    }
+
+    .inactive {
+      .box{
+        color: $userList-color-inactive;
+        background: #f5f5f7;
+      }
+    }
+    .pending {
+      .box{
+      color: $userList-color-pending;
+      background: #fdf7e5;
+      }
+    }
+
+    .blacklisted {
+      .box{
+        color: $userList-color-blacklisted;
+        background: #fce6eb;
+      }
+    }
+
+    .filter{
+      height: 30px;
+      width: 30px;
+    }
+
+  }
+
+  .showing{
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .showingHowMany{
+      color: #545F7D;
+      font-family: Work Sans;
+      font-size: 1.2em;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+      flex-shrink: 0;
+    }
+
+  }
+
+  // Mobile responsive design
+  @media (max-width: $breakpoint-rg-laptop) {
+
+    .tableResponsive {
+      padding: 0.75em;
+    }
+
+    .table {
+      thead {
+        display: none;
+      }
+
+      tbody, tr, td {
+        display: block;
+        width: 100%;
+      }
+
+      td {
+        position: relative;
+        padding-left: 50%;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        min-width: 350px;
+        text-wrap: pretty;
+
+        &:before {
+          content: attr(data-label);
+          position: absolute;
+          left: 0;
+          padding-left: 1rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: $userList-color-secondary;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      td:last-child {
+        border-bottom: 0;
+      }
+
+      tr {
+        padding: 1em 0;
+        border-radius: 8px;
+      }
+    }
+
+    .showing{
+      justify-content: center;
+    }
+  }
+}
+
+// Pagination Styles
+.pagination {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  justify-content: center; // Center the pagination component
+  align-items: center;
+
+  li {
+    a {
+      border-radius: 4px; // Rounded corners
+      padding: 8px 0px 8px 25px;
+      display: flex;
+      color: rgba(#545F7D, 0.3);
+      cursor: pointer;
+      &:hover,
+      &.activePage {
+        border-color: #c6c6c6; // Border color on hover and active state
+      }
+    }
+
+    &.activePage a {
+      color: #545F7D;
+      font-weight: bolder;
+    }
+  }
+
+  .previous, .next {
+    a {
+      font-weight: bold; // Bold font for previous and next labels
+    }
+  }
+
+  .break-me {
+    cursor: default; // Default cursor for breaks
+  }
+}

@@ -1,0 +1,235 @@
+// styles/components/UserDetails.module.scss
+
+@import '../variables';
+
+.userDetails {
+  background-color: #ffffff;
+  font-family: 'Work Sans', sans-serif;
+
+  .generalDetails {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    padding: 3em 3em 0 3em;
+    gap: 2.5em;
+    width: auto;
+    text-wrap: nowrap;
+    overflow: auto;
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 2em;
+      line-height: 2.5em;
+
+      .profileTier {
+
+        padding: 1.5em 2em;
+        border-left: 1px solid #dddfe5;
+        border-right: 1px solid #dddfe5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .tierTitle{
+          color: #545F7D;
+          font-family: Work Sans;
+          font-size: 1.05em;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+
+        .rating{
+          display: flex;
+          flex-direction: row;
+          margin-top: 1em;
+        }
+
+      }
+
+      .profileImage {
+        border-radius: 50%;
+        width: 8em; // Adjust according to your design
+        height: 8em;
+      }
+
+      .profileInfo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1em;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .profileName {
+          font-size: 1.5rem;
+          color: #213F7D;
+          font-weight: 600;
+        }
+
+      }
+
+    }
+
+    }
+
+    .profileInfoText {
+      color: #545F7D;
+      font-family: Work Sans;
+      font-size: 1em;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .balance {
+      font-size: 1.25rem;
+      color: #000;
+      font-weight: bold;
+
+      .balanceAmount{
+        color: #213F7D;
+        font-family: Work Sans;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+
+      .balanceBank{
+        color: #213F7D;
+        font-family: Work Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+
+  .detailsTabs {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 1rem;
+
+      .tabButton {
+        background-color: transparent;
+        border: none;
+        padding: 0.75em 1em;
+        font-size: 1.05em;
+        color: #545F7D;
+        cursor: pointer;
+        transition: 0.3s ease;
+        min-width: 9em;
+
+        &.active {
+          font-size: 1.1em;
+          color: #39CDCC;
+          border-bottom: 2.5px solid #39CDCC;
+        }
+
+        &:hover {
+          color: #213F7D;
+        }
+      }
+    }
+
+  .personalInfo,
+  .educationEmployment,
+  .socials,
+  .guarantorInfo {
+
+    padding: 1em;
+    padding-bottom: 2.75em;
+    border-bottom: 1px solid #eaeaea;
+
+    h3.sectionTitle {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #213F7D;
+      margin-bottom: 2em;
+    }
+
+    .infoGrid {
+
+      display: flex;
+      // grid-template-columns: repeat(5, 1fr);
+      gap: 2.5em 9em;
+      flex-wrap: wrap;
+
+      .infoItem {
+        display: flex;
+        flex-direction: column;
+        min-width: 15em;
+
+        .infoLabel {
+          font-size: 0.9rem;
+          color: #545F7D;
+          font-family: Work Sans;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          text-transform: uppercase;
+          margin-bottom: 0.75em;
+        }
+
+        .infoValue {
+          font-size: 1.1em;
+          color: #545F7D;
+          font-family: Work Sans;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+
+
+        }
+      }
+    }
+  }
+
+  .socialLinks {
+    display: flex;
+    gap: 1rem;
+    // Add styles for social media icons/links
+  }
+}
+
+// Responsive Design
+@media (max-width: $breakpoint-tablet) {
+  .userDetails {
+    .generalDetails {
+      .profile {
+        flex-direction: column;
+        align-items: center;
+
+        .profileInfo {
+          align-items: center;
+        }
+
+        .profileTier{
+          border: 0;
+        }
+      }
+
+      .detailsTabs {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .infoGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .balance{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75em;
+  }
+
+}

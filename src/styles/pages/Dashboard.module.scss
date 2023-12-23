@@ -1,0 +1,78 @@
+// styles/page/Dashboard.module.scss
+
+@import '../variables';
+@import '../mixins';
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+
+  .mainContent {
+    width: calc(100% - $sidebar-width);
+    padding: $spacing-large 3.5%; // 3em replaced with $spacing-large
+  }
+
+  .heading {
+    @include font-styling($primary-color, 'Work Sans', 1.5em, 500); // 24px equivalent
+    margin: 0 0 $spacing-medium; // 1em replaced with $spacing-medium
+  }
+
+  .container {
+    display: flex;
+  }
+
+  #back {
+    @include font-styling($tertiary-color, 'Work Sans', $font-size-normal, 400);
+    display: flex;
+    align-items: center;
+    gap: $spacing-small;
+    margin-bottom: 1.75em;
+  }
+  
+  .buttonHeaderPanel {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.5em;
+
+    .buttons {
+      display: flex;
+      gap: $spacing-small;
+      flex-wrap: wrap;
+
+      button {
+        border-radius: $border-radius-medium;
+        width: 10.625em; // 170px equivalent
+        height: 2.5em; // 40px equivalent
+        flex-shrink: 0;
+      }
+
+      #blacklist {
+        @include button-style-variations(#E4033B, #E4033B); // Using red color for blacklist button
+        &:hover {
+          background: #E4033B;
+          color: $light-bg-color;
+        }
+      }
+
+      #activate {
+        @include button-style-variations(#39CDCC, #39CDCC); // Using cyan color for activate button
+        &:hover {
+          background: #39CDCC;
+          color: $light-bg-color;
+        }
+      }
+    }
+  }
+
+}
+
+// Responsive styles
+@media (max-width: $breakpoint-tablet) {
+  .dashboard .mainContent {
+    width: calc(100% - $sidebar-collapsed-width);
+
+    .buttonHeaderPanel {
+      flex-direction: column;
+    }
+  }
+}

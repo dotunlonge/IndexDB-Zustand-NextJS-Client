@@ -1,0 +1,113 @@
+// styles/page/LoginPage.module.scss
+
+@import '../variables';
+@import '../mixins';
+
+$font-family-main: 'Avenir Next', sans-serif;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 7.5%; // Convert this padding to em if necessary
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 25vh;
+    width: 100%;
+  }
+
+  .sections {
+    min-height: 55vh;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .leftSide,
+  .rightSide {
+    width: 50%;
+    display: flex;
+    align-items: center;
+  }
+
+  .rightSide {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 5%; // Convert this padding to em if necessary
+
+    h3 {
+      @include font-styling($primary-color, $font-family-main, $font-size-large, 700);
+      margin-bottom: 0.25em;
+    }
+
+    p {
+      @include font-styling($tertiary-color, $font-family-main, $font-size-medium, 400);
+    }
+
+    form {
+      margin-top: $spacing-medium;
+      width: 100%;
+    }
+
+    .formControl {
+      margin: $spacing-medium 0;
+      position: relative;
+
+      input {
+        @include input-styling;
+        &:focus {
+          outline: none;
+          border-color: $color-focus-border;
+        }
+      }
+
+      #forgotPassword {
+        @include link-styling($secondary-color, $font-family-main, $font-size-small);
+        &:hover {
+          color: $primary-color;
+        }
+      }
+
+      #logIn {
+        @include button-styling($secondary-color, $font-family-main, $font-size-xsmall);
+        &:hover {
+          background: $primary-color;
+        }
+      }
+
+      #togglePasswordVisibility {
+        @include link-styling($secondary-color, $font-family-main, $font-size-xsmall * 0.9); // 0.9em size
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 0 $spacing-small;
+        height: auto;
+        transform: scale(0.9);
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    .leftSide {
+      display: none;
+    }
+
+    .rightSide {
+      width: 100%;
+      padding: 0;
+
+      .formControl input {
+        width: 100%;
+      }
+    }
+  }
+}

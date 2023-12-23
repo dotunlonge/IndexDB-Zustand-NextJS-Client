@@ -1,0 +1,145 @@
+// Header.module.scss
+@import '../variables';
+$header-min-height: 6.25em; // 100px converted to em based on the base font size of 16px
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5% 3.5%;
+  border-bottom: 1px solid $border-color;
+  min-height: $header-min-height;
+}
+
+.logoContainer {
+  width: $sidebar-width;
+}
+
+.elementsContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 20em);
+}
+
+.elementsContainer, .hamburger {
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+
+  display: flex;
+  gap: $spacing-small;
+  width: 60%;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 100%;
+  }
+
+
+  .navItem {
+    display: block;
+    padding: $spacing-small $spacing-medium; // Using spacing variables
+    color: #333333;
+    text-decoration: none;
+
+    &:hover {
+      color: #000000;
+    }
+  }
+
+  .searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      min-width: 60%;
+    }
+
+
+  }
+}
+
+.userControls {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  padding-left: 2em;
+
+  .userProfile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      border-radius: 10em;
+    }
+  }
+
+  .userName {
+    margin-left: $spacing-small;
+    display: flex;
+    align-items: center;
+  }
+}
+
+  .search{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: 1px solid rgb(33 63 125 / 15%);
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    height: 3em;
+    width: 100%;
+    background: #FFF;
+    padding: 0 1em;
+  }
+
+  .searchBtn{
+    background: #39CDCC;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 3em;
+    padding: 0 1.5em;
+  }
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: $breakpoint-tablet) {
+
+  .header{
+    justify-content: space-between;
+  }
+  .elementsContainer {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .elementsContainer.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 1em;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background: #FFF;
+    padding: 2em;
+    z-index: 5;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+}

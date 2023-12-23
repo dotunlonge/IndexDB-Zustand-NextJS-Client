@@ -1,0 +1,57 @@
+// Media query breakpoints
+$breakpoint-mobile: 768px; // breakpoint for mobile devices
+$breakpoint-tablet: 64em; // 1024px equivalent
+$breakpoint-rg-laptop: 72em; // 1152px equivalent
+
+$sidebar-width: 20em; // 320px equivalent for desktop
+$sidebar-collapsed-width: 80px; // width of the sidebar when collapsed for mobile
+
+// Font sizes
+$font-size-small: 0.75em; // 12px equivalent
+$font-size-normal: 1em; // 16px equivalent
+$font-size-large: 2.5em; // 40px equivalent
+$font-size-medium: 1.25em; // 20px equivalent
+$font-size-xsmall: 0.875em; // 14px equivalent
+
+// Spacing
+$spacing-small: 1em; // 16px equivalent
+$spacing-medium: 2em; // 32px equivalent
+$spacing-large: 4em; // 64px equivalent
+
+$border-radius-small: 0.3125em; // 5px equivalent
+$border-radius-medium: 0.5em; // 8px equivalent
+
+$negative-letter-spacing: -0.05em; // -0.8px equivalent
+
+// Prefers-color-scheme
+$primary-color: #213F7D;
+$secondary-color: #39CDCC;
+$tertiary-color: #545F7D;
+$light-bg-color: #FFF;
+
+$border-color: rgba(0, 0, 0, 0.05);
+$color-focus-border: #007bff;
+
+$base-font-size: 16; // Default base size for font
+
+// Specific variables for userList
+$userList-color-primary: #FFFFFF; // White
+$userList-color-secondary: #545F7D; // Dark blue-gray
+$userList-color-text: #545F7D; // Dark gray for text
+$userList-color-inactive: #545F7D; // Light gray for inactive text
+$userList-color-blacklisted: #E74C3C; // Red for blacklisted
+$userList-color-pending: #F39C12; // Orange for pending
+$userList-color-active: #39CD62; // Green for active
+$userList-color-border: rgba(33, 63, 125, 0.10); // Light gray for borders
+$userList-font-family: 'Work Sans', sans-serif;
+
+
+// Define your color scheme and spacing using variables
+$filterPanel-color-primary: #fff; // Adjust as needed
+$filterPanel-color-secondary: #000; // Adjust as needed
+$filterPanel-color-border: rgba(#213F7D, 0.2); // Adjust as needed
+$filterPanel-color-reset-btn: #f8f9fa; // Adjust as needed
+$filterPanel-color-filter-btn: #39CDCC; // Adjust as needed
+$filterPanel-color-btn-text: #fff; // Adjust as needed
+$filterPanel-font-size: 0.9em;
+$filterPanel-padding-ui: 1.25em 0.5em; // 16px equivalent

@@ -1,0 +1,79 @@
+@import "../variables";
+
+.filterPanel {
+  background-color: $filterPanel-color-primary;
+  padding: $filterPanel-padding-ui;
+  display: flex;
+  flex-direction: column;
+  gap: 1em; // 16px equivalent
+  width: 100%;
+
+  .filterItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em; // 5px equivalent
+
+    label {
+      text-transform: none;
+    }
+
+    .textInput,
+    .selectInput {
+      border: 0.0625em solid $filterPanel-color-border;
+      border-radius: 0.5em;
+      padding: 0.8em 1.4em;
+      min-width: 20em;
+      font-weight: 500;
+      background: #FFF;
+      &:focus {
+        outline: none;
+        border-color: $color-focus-border;
+      }
+    }
+
+    .selectInput {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: url('/path-to-your-dropdown-arrow.svg') no-repeat;
+      background-position: right 0.625em center; // 10px equivalent
+      background-size: 0.75em; // 12px equivalent
+    }
+  }
+
+  .filterActions {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.625em; // 10px equivalent
+
+    .resetBtn,
+    .filterBtn {
+      flex-grow: 1;
+      padding: 1em 0.625em; // 10px equivalent
+      border: none;
+      border-radius: 0.25em; // 4px equivalent
+      cursor: pointer;
+    }
+
+    .resetBtn {
+      background-color: $filterPanel-color-reset-btn;
+      border-radius: 8px;
+      border: 1px solid #545F7D;
+    }
+
+    .filterBtn {
+      background-color: $filterPanel-color-filter-btn;
+      color: $filterPanel-color-btn-text;
+      border-radius: 8px;
+      border: 1px solid #39CDCC;
+    }
+  }
+}
+
+// Responsive styling
+@media (max-width: 48em) { // 768px equivalent
+  .filterPanel {
+    max-width: 100%;
+    padding: 0.9375em; // 15px equivalent
+  }
+}

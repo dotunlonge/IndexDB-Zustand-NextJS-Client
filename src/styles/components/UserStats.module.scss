@@ -1,0 +1,56 @@
+// styles/components/userStats.module.scss;
+
+@import '../variables';
+@import '../mixins'; 
+
+.userStatsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @media (max-width: $breakpoint-rg-laptop) {
+    flex-wrap: wrap;
+  }
+}
+
+.userStatCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: $spacing-medium; // 2em replaced with $spacing-medium
+  width: 23.5%;
+  border-radius: $border-radius-medium; // 4px equivalent
+  border: 1px solid rgba($primary-color, 0.06);
+  background: $light-bg-color;
+  margin: $spacing-small 0; // 1em replaced with $spacing-small
+  box-shadow: 0 0 $spacing-small rgba(0, 0, 0, 0.1); // 15px shadow with 0.1 opacity
+
+  @media (max-width: $breakpoint-rg-laptop) {
+    width: 100% !important;
+  }
+
+  .icon {
+    margin-bottom: $spacing-small; // 1em equivalent
+    height: 3.125em; // 50px equivalent
+    width: 3.125em; // 50px equivalent
+  }
+
+  label {
+    margin-bottom: $font-size-small; // 0.75em equivalent
+    @include font-styling($tertiary-color, 'Work Sans', $font-size-normal, 500);
+    text-transform: uppercase;
+  }
+
+  p {
+    @include font-styling($primary-color, 'Work Sans', $font-size-large, 500);
+    text-transform: uppercase;
+  }
+
+  div {
+    font-size: 1.375em; // 22px equivalent
+    font-weight: 600;
+    color: #333;
+  }
+}

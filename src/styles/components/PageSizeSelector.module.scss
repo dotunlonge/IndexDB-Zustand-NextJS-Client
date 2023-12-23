@@ -1,0 +1,44 @@
+.selectWrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  .select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    padding: 0.6em 2em 0.5em 0.8em;
+    border-radius: 4px;
+    background: rgba(33, 63, 125, 0.10);
+    color: #213F7D;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.1;
+    transition: border-color 0.2s ease-in-out;
+  }
+
+  .select:focus {
+    outline: none;
+    border-color: darken(rgba(33, 63, 125, 0.10), 10%);
+  }
+
+  .select:hover {
+    border-color: darken(rgba(33, 63, 125, 0.10), 5%);
+  }
+
+
+  .downArrow{
+    position: absolute;
+      right: 0.5em;
+      top: 0.7em;
+      bottom: 0;
+      height: 1em;
+      width: 1em;
+      z-index: -1;
+  }
+
+}
