@@ -229,6 +229,7 @@ const config: Config = {
     '^@/utils/tests/mockUsers': '<rootDir>/src/utils/tests/mockUsers',
     '^@/components/Dashboard/UserDetails': '<rootDir>/src/components/Dashboard/UserDetails',
     '^@/styles/components/UserDetails.module.scss': 'identity-obj-proxy',
+    '^@/utils/helpers/user': '<rootDir>/src/utils/helpers/user',
   },
 
 };
