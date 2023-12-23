@@ -153,14 +153,16 @@
 
   }
 
+  #loading{
+    min-width: auto;
+  }
   // Mobile responsive design
   @media (max-width: $breakpoint-rg-laptop) {
 
-    .tableResponsive {
-      padding: 0.75em;
-    }
-
     .table {
+
+      padding: 0;
+
       thead {
         display: none;
       }
@@ -177,6 +179,7 @@
         padding-bottom: 0.75rem;
         min-width: 350px;
         text-wrap: pretty;
+        font-size: 0.95em;
 
         &:before {
           content: attr(data-label);
