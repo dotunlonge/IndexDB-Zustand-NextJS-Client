@@ -1,12 +1,11 @@
 # Lendsqr Frontend Test
 
 This project is a part of the Lendsqr Front-end Challenge, representing a segment of the Lendsqr Admin Console. It includes a robust login system, a comprehensive dashboard, a user list page, and a detailed user profile page. The application is designed with responsiveness in mind to cater to a wide range of devices.
-
 Read more here - https://auspicious-marscapone-4fb.notion.site/Lendsqr-Front-End-Challenge-Documentation-1169c08d96c9423c9dc67c3f4f1d128e?pvs=4
 
 ## Demo
 
-A live demo of the application can be found at http://lendsqr-kappa.vercel.app
+A live demo of the application can be found at https://lendsqr-fe-test-lovat.vercel.app
 
 ## Description
 
@@ -19,7 +18,7 @@ The application facilitates the management of user data for lenders and includes
 
 ## Visuals
 
-Include screenshots or gifs here to show how the app looks and works.
+Figma Design - https://www.figma.com/file/ZKILoCoIoy1IESdBpq3GNC/Lendsqr-Frontend-Engineering-Assessment?node-id=5530%3A2716&mode=dev
 
 ## Tech Stack
 
@@ -77,9 +76,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Contact
 
 For inquiries or support, please email me at oludotunlonge@gmail.com.
-
-## Project Status
-
-The project is currently in [active development/maintenance mode/not being actively developed]. Check the issue tracker for updates on ongoing development.
-# lendsqr-fe-test
-# lendsqr-fe-test
