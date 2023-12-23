@@ -5,7 +5,7 @@ Read more here - https://auspicious-marscapone-4fb.notion.site/Lendsqr-Front-End
 
 ## Demo
 
-A live demo of the application can be found at http://lendsqr-kappa.vercel.app
+A live demo of the application can be found at https://lendsqr-fe-test-lovat.vercel.app
 
 ## Description
 
