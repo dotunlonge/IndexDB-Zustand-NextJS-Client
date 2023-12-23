@@ -39,21 +39,37 @@ export const calculateUserStatistics = (users: User[]) => {
  * @returns {Date} A formatted date value
  */
 export function formatDateString(inputDate: string): string {
-  
-    if (!inputDate || isNaN(Date.parse(inputDate))) {
-      console.error('Invalid date:', inputDate);
-      return 'Invalid date';
-    }
+  // Parse the input date string
+     const parts = inputDate.match(/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2}) (AM|PM)/);
 
-    const options: Intl.DateTimeFormatOptions = {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true
-    };
+     if (!parts) {
+         return 'Invalid Date';
+     }
 
-    const date = new Date(inputDate);
-    return new Intl.DateTimeFormat('en-US', options).format(date);
+     let [ , year, month, day, hour, minute, , ampm] = parts;
+
+     // Convert hour to 24-hour format if PM
+     if (ampm === 'PM' && hour !== '12') {
+         hour = parseInt(hour, 10) + 12;
+     }
+
+     // Convert hour to 0 if 12 AM
+     if (ampm === 'AM' && hour === '12') {
+         hour = '00';
+     }
+
+     // Create a new date object
+     const date = new Date(year, month - 1, day, hour, minute);
+
+     // Format the date
+     const options = {
+         year: 'numeric',
+         month: 'short',
+         day: 'numeric',
+         hour: 'numeric',
+         minute: 'numeric',
+         hour12: true
+     };
+
+     return new Intl.DateTimeFormat('en-US', options).format(date);
 };
