@@ -156,6 +156,19 @@
   #loading{
     min-width: auto;
   }
+
+  @media (max-width: $breakpoint-iphone) {
+    .table{
+      display: table-cell !important;
+    }
+  }
+
+  @media (min-width: $breakpoint-iphone) {
+    .table{
+      display: block;
+    }
+  }
+
   // Mobile responsive design
   @media (max-width: $breakpoint-rg-laptop) {
 
