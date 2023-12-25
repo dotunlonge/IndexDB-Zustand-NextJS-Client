@@ -1,3 +1,5 @@
+// components/Dashboard/UserDetails/GeneralDetailsSection.tsx
+
 import React, { useState } from 'react';
 import styles from '@/styles/components/UserDetails.module.scss';
 import type { GeneralDetailsSectionProps } from "@/utils/types/components";
