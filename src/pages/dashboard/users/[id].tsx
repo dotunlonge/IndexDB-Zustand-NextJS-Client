@@ -1,4 +1,4 @@
-// pages/dashboard.tsx
+// pages/dashboard/users/[id].tsx
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
