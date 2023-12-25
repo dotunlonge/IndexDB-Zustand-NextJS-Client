@@ -1,3 +1,5 @@
+// components/Dashboard/UserDetails/index.tsx
+
 import React, { useState } from 'react';
 import styles from '@/styles/components/UserDetails.module.scss';
 import type { User, UserDetailsProps } from "@/utils/types/user";
