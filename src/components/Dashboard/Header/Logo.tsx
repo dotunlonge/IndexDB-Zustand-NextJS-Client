@@ -1,4 +1,4 @@
-// components/Logo.tsx
+// components/Dashboard/Header/Logo.tsx
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
