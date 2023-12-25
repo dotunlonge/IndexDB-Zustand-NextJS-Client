@@ -1,4 +1,4 @@
-// components/HamburgerMenu.tsx
+// components/Dashboard/Header/HamburgerMenu.tsx
 import React from 'react';
 import Image from 'next/image';
 import styles from '@/styles/components/Header.module.scss';
