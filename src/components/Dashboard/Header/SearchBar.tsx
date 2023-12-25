@@ -1,4 +1,4 @@
-// components/Navigation.tsx
+// components/Dashboard/Header/SearchBar.tsx
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
