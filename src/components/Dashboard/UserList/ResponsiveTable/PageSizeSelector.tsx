@@ -1,3 +1,6 @@
+// components/Dashboard/UserList/ResponsiveTable/PageSizeSelector.tsx
+
+
 import React, { useRef } from 'react';
 import styles from "@/styles/components/PageSizeSelector.module.scss";
 import Image from "next/image";
