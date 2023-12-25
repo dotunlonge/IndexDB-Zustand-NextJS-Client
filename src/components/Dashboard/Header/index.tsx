@@ -1,4 +1,4 @@
-// components/Header.tsx
+// components/Dashboard/Header/index.tsx
 import React, { useState } from 'react';
 import Logo from './Logo';
 import HamburgerMenu from './HamburgerMenu';
