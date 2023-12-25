@@ -1,3 +1,5 @@
+// components/Dashboard/UserList/ResponsiveTable/FilterPanel.tsx
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from '@/styles/components/FilterPanel.module.scss';
