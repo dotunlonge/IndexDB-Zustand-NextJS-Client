@@ -1,4 +1,4 @@
-// components/ResponsiveTable.tsx
+// components/Dashboard/UserList/ResponsiveTable/index.tsx
 import React, { useState, useMemo } from 'react';
 import styles from '@/styles/components/UserList.module.scss';
 import Image from 'next/image';
