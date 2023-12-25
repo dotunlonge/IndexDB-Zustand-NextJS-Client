@@ -1,3 +1,5 @@
+// components/Dashboard/UserList/ResponsiveTable/ButtonWithModal.tsx
+
 import React, { useState, useRef, useEffect } from 'react';
 import styles from '@/styles/components/ButtonWithModal.module.scss';
 import { ButtonWithModalComponentProps }  from "@/utils/types/components";
@@ -23,7 +25,7 @@ const ButtonWithModal: React.FC<ButtonWithModalComponentProps> = ({
 }) => {
 
   const buttonRef = useRef<HTMLButtonElement>(null);
-  
+
   const [isComponentVisible, setComponentVisible] = useState(false);
   const [position, setPosition] = useState({ top: 0, left: 0 });
 
