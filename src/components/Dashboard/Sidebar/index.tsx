@@ -108,7 +108,7 @@ const Sidebar: React.FC = () => {
       <div className={styles.logOut}>
         <ul className={styles.menuList}>
         <li>
-          <Link href={"/dashboard"} className={styles.sidebarMenuOption}>
+          <Link href={"/"} className={styles.sidebarMenuOption}>
             <Image src={'/icons/sign-out.svg'} alt={"Logout"} width={16} height={16} />
             <span className={styles.menuItemText}>Logout</span>
           </Link>
