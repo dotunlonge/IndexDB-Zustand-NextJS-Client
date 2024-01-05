@@ -19,6 +19,9 @@ const Sidebar: React.FC = () => {
   const router = useRouter();
   const [activeItem, setActiveItem] = useState<string>('');
 
+  const disableSidebarNavigation = true;
+  const disabledPath = '#';
+
   useEffect(() => {
     setActiveItem(router.pathname);
   }, [router.pathname]);
@@ -28,31 +31,32 @@ const Sidebar: React.FC = () => {
       const menuItems: MenuItem[] = [
         // Customers - Sub-category
         { name: 'Users', icon: '/icons/users.svg', path: '/dashboard/users', section: 'customers' },
-        { name: 'Guarantors', icon: '/icons/guarantors.svg', path: '/dashboard/guarantors', section: 'customers' },
-        { name: 'Loans', icon: '/icons/loans.svg', path: '/dashboard/loans', section: 'customers' },
-        { name: 'Decision Models', icon: '/icons/decision-models.svg', path: '/dashboard/decision-models', section: 'customers' },
-        { name: 'Savings', icon: '/icons/savings.svg', path: '/dashboard/savings', section: 'customers' },
-        { name: 'Loan Requests', icon: '/icons/loan-products.svg', path: '/dashboard/loan-requests', section: 'customers' },
-        { name: 'Whitelist', icon: '/icons/whitelist.svg', path: '/dashboard/whitelist', section: 'customers' },
-        { name: 'Karma', icon: '/icons/karma.svg', path: '/dashboard/karma', section: 'customers' },
+        { name: 'Guarantors', icon: '/icons/guarantors.svg', path:  disableSidebarNavigation ? disabledPath : '/dashboard/guarantors', section: 'customers' },
+        { name: 'Loans', icon: '/icons/loans.svg', path:  disableSidebarNavigation ? disabledPath : '/dashboard/loans', section: 'customers' },
+        { name: 'Decision Models', icon: '/icons/decision-models.svg', path:  disableSidebarNavigation ? disabledPath : '/dashboard/decision-models', section: 'customers' },
+        { name: 'Savings', icon: '/icons/savings.svg', path:  disableSidebarNavigation ? disabledPath : '/dashboard/savings', section: 'customers' },
+        { name: 'Loan Requests', icon: '/icons/loan-products.svg', path:  disableSidebarNavigation ? disabledPath : '/dashboard/loan-requests', section: 'customers' },
+        { name: 'Whitelist', icon: '/icons/whitelist.svg', path:  disableSidebarNavigation ? disabledPath : '/dashboard/whitelist', section: 'customers' },
+        { name: 'Karma', icon: '/icons/karma.svg', path:  disableSidebarNavigation ? disabledPath : '/dashboard/karma', section: 'customers' },
 
         // Businesses - Sub-category
-        { name: 'Organization', icon: '/icons/organization.svg', path: '/dashboard/organization', section: 'businesses' },
-        { name: 'Loan Products', icon: '/icons/loan-products.svg', path: '/dashboard/loan-products', section: 'businesses' },
-        { name: 'Savings Products', icon: '/icons/savings-products.svg', path: '/dashboard/savings-products', section: 'businesses' },
-        { name: 'Fees and Pricing', icon: '/icons/fees-pricing.svg', path: '/dashboard/fees-pricing', section: 'businesses' },
-        { name: 'Transactions', icon: '/icons/transactions.svg', path: '/dashboard/transactions', section: 'businesses' },
-        { name: 'Services', icon: '/icons/services.svg', path: '/dashboard/services', section: 'businesses' },
-        { name: 'Service Account', icon: '/icons/service-account.svg', path: '/dashboard/service-account', section: 'businesses' },
-        { name: 'Settlements', icon: '/icons/settlements.svg', path: '/dashboard/settlements', section: 'businesses' },
-        { name: 'Reports', icon: '/icons/reports.svg', path: '/dashboard/reports', section: 'businesses' },
+        { name: 'Organization', icon: '/icons/organization.svg', path:  disableSidebarNavigation ? disabledPath :'/dashboard/organization', section: 'businesses' },
+        { name: 'Loan Products', icon: '/icons/loan-products.svg', path:  disableSidebarNavigation ? disabledPath :'/dashboard/loan-products', section: 'businesses' },
+        { name: 'Savings Products', icon: '/icons/savings-products.svg', path:  disableSidebarNavigation ? disabledPath :'/dashboard/savings-products', section: 'businesses' },
+        { name: 'Fees and Pricing', icon: '/icons/fees-pricing.svg', path:  disableSidebarNavigation ? disabledPath :'/dashboard/fees-pricing', section: 'businesses' },
+        { name: 'Transactions', icon: '/icons/transactions.svg', path:  disableSidebarNavigation ? disabledPath :'/dashboard/transactions', section: 'businesses' },
+        { name: 'Services', icon: '/icons/services.svg', path:  disableSidebarNavigation ? disabledPath :'/dashboard/services', section: 'businesses' },
+        { name: 'Service Account', icon: '/icons/service-account.svg', path:  disableSidebarNavigation ? disabledPath :'/dashboard/service-account', section: 'businesses' },
+        { name: 'Settlements', icon: '/icons/settlements.svg', path:  disableSidebarNavigation ? disabledPath :'/dashboard/settlements', section: 'businesses' },
+        { name: 'Reports', icon: '/icons/reports.svg', path:  disableSidebarNavigation ? disabledPath :'/dashboard/reports', section: 'businesses' },
 
         // Settings - Sub-category
-        { name: 'Preferences', icon: '/icons/preferences.svg', path: '/dashboard/preferences', section: 'settings' },
-        { name: 'Fees and Pricing', icon: '/icons/fees-pricing.svg', path: '/dashboard/fees-and-pricing', section: 'settings' },
-        { name: 'Audit Logs', icon: '/icons/audit-logs.svg', path: '/dashboard/audit-logs', section: 'settings' },
-        { name: 'System Messages', icon: '/icons/system-messages.svg', path: '/dashboard/system-messages', section: 'settings' },
+        { name: 'Preferences', icon: '/icons/preferences.svg', path:  disableSidebarNavigation ? disabledPath :'/dashboard/preferences', section: 'settings' },
+        { name: 'Fees and Pricing', icon: '/icons/fees-pricing.svg', path:  disableSidebarNavigation ? disabledPath :'/dashboard/fees-and-pricing', section: 'settings' },
+        { name: 'Audit Logs', icon: '/icons/audit-logs.svg', path:  disableSidebarNavigation ? disabledPath :'/dashboard/audit-logs', section: 'settings' },
+        { name: 'System Messages', icon: '/icons/system-messages.svg', path:  disableSidebarNavigation ? disabledPath :'/dashboard/system-messages', section: 'settings' },
       ];
+
       return menuItems.reduce((acc, item) => {
      acc[item.section] = acc[item.section] || [];
      acc[item.section].push(item);
@@ -80,7 +84,7 @@ const Sidebar: React.FC = () => {
           </li>
 
           <li className={activeItem === "Dashboard" ? styles.active : ''}>
-            <Link href={"/dashboard"} className={styles.sidebarMenuOption}>
+            <Link href={disableSidebarNavigation ? disabledPath : "/dashboard"} className={styles.sidebarMenuOption}>
               <Image src={'/icons/home.svg'} alt={"Dashboard"} width={16} height={16} />
               <span className={styles.menuItemText}>Dashboard</span>
             </Link>
